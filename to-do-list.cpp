@@ -114,7 +114,7 @@ void load_tasks(vector<task>& tasks){
             task task_obj;
             task_obj.task_description = description;
 
-            if( status == "1"){//converts the status string ti booleon
+            if( status == "1"){//converts the status string to booleon
                 task_obj.is_completed = true;
             }else{
                 task_obj.is_completed = false;
@@ -126,7 +126,6 @@ void load_tasks(vector<task>& tasks){
 }
 
 void add_task(vector<task>& tasks){
-    system("cls");
     string description;
     cout << "Enter the task description: \n";
     getline(cin >> ws, description);
@@ -196,11 +195,11 @@ void save_data(const vector<task>& tasks){
         for(int i = 0; i < tasks.size(); i++){
             outFile << tasks[i].task_description << "|" << tasks[i].is_completed << endl;
         }
-        outFile.close();
+        outFile.close(); 
+        cout << "Data saved successfully.... ";
     }else{
         cout << "Error: Could not save task." <<endl;
     }
-    cout << "Data saved successfully.... ";
     pause_execution();
 }
 

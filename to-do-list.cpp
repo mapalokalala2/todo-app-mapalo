@@ -73,18 +73,17 @@ int main_menu(const vector<task>& tasks){
     system("cls");
     int choice;
     string header = "=====================\n";
+    while(true){// loop infinitly untill we get a valid input
+    system("cls");
     cout << header << "     TO DO LIST   \n" << header
-    << "[1] Add Task \n"
-    << "[2] View Tasks \n"
-    << "[3] Mark Task as Completed\n"
-    << "[4] Delete task \n"
-    << "[5] Exit \n"
-    << "\nYOU HAVE ["<< tasks.size() << "] TASKS \n";
-
+         << "[1] Add Task \n"
+         << "[2] View Tasks \n"
+         << "[3] Mark Task as Completed\n"
+         << "[4] Delete task \n"
+         << "[5] Exit \n"
+         << "\nYOU HAVE ["<< tasks.size() << "] TASKS \n";
     cout << "pick an option (1-5): \n";
     cin >> choice;
-
-    while(true){// loop infinitly untill we get a valid input
      if (cin.fail()) {
             cout << "\nInvalid input. Please enter a number.\n";
             cin.clear(); // Clear the error flag
@@ -93,7 +92,6 @@ int main_menu(const vector<task>& tasks){
             system("cls");
         } else if (choice >= 1 && choice <= 5) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << header;
             return choice; // Valid input, return it
 
         } else {

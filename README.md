@@ -69,8 +69,10 @@
 8. Settings
 
     - select change name
-        * Enter name
+    -Enter name
+
 ![alt text](images/Setting.png)
+
 9. Exiting the Program
 
     - Select the "Exit" option.

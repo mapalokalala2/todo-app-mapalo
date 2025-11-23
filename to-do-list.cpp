@@ -12,6 +12,7 @@ struct task{
 // this is a global constant for the name of the file.
 //this is so we dont write it wrong in any point of the program.
 const string FILENAME = "task.txt";
+const string NAME = "name.txt";
 
 
 //function decluration starts
@@ -23,10 +24,20 @@ void view_tasks(const vector<task>& tasks);
 void mark_task_as_completed(vector<task>& tasks);
 void delete_task(vector<task>& tasks);
 void save_data(const vector<task>& tasks);
+void save_name(const string& name);
+string get_name();
+void settings_menu(string& name);
+
 //function declaration ends
 
 int main(){
-
+    string name = get_name();
+    if(name.empty()){
+        cout << "welcome! It seems your new here.\n";
+        cout << "Please enter your name: ";
+        getline(cin, name);
+        save_name(name);
+    }
     vector<task> tasks;// this will be our list of tasks. i have used vectors because vectors are easy to manipulate
     load_tasks(tasks);
     int choice = 0;
@@ -52,6 +63,10 @@ int main(){
             break;
             case 5:
             system("cls");
+            settings_menu(name);
+            break;
+            case 6:
+            system("cls");
             save_data(tasks);
             system("cls");
             cout << "THANK YOU FOR USING YOUR TO DO LIST";
@@ -75,12 +90,14 @@ int main_menu(const vector<task>& tasks){
     string header = "=====================\n";
     while(true){// loop infinitly untill we get a valid input
     system("cls");
-    cout << header << "     TO DO LIST   \n" << header
+    cout << header << "     TO DO LIST   \n" << header 
+         << "Welcome " << get_name() << '\n'
          << "[1] Add Task \n"
          << "[2] View Tasks \n"
          << "[3] Mark Task as Completed\n"
          << "[4] Delete task \n"
-         << "[5] Exit \n"
+         << "[5] setting \n"
+         << "[6] Exit\n"
          << "\nYOU HAVE ["<< tasks.size() << "] TASKS \n";
     cout << "pick an option (1-5): \n";
     cin >> choice;
@@ -90,7 +107,7 @@ int main_menu(const vector<task>& tasks){
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard bad input
             pause_execution();
             system("cls");
-        } else if (choice >= 1 && choice <= 5) {
+        } else if (choice >= 1 && choice <= 6) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return choice; // Valid input, return it
 
@@ -203,3 +220,66 @@ void save_data(const vector<task>& tasks){
     pause_execution();
 }
 
+string get_name(){
+    ifstream readFile(NAME);
+    string name;
+    if(readFile.is_open()){
+        getline(readFile, name);
+        readFile.close();
+    }
+    return name;
+}
+
+void save_name(const string& name){
+    ofstream outFile(NAME);
+    if(outFile.is_open()){
+        outFile << name ;
+        outFile.close();
+    }
+}
+
+void settings_menu(string& name){
+    int choice;
+    
+    while(true){
+        cout << "-------------Settings-------------\n";
+        cout << "[1] Change Name\n"
+             << "[2] Back to Main Menu\n"
+             << "Enter choice: ";
+        cin >> choice;
+          if (cin.fail()) {
+            cout << "\nInvalid input. Please enter a number.\n";
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard bad input
+            pause_execution();
+            system("cls");
+        } else if (choice >= 1 && choice <= 2) {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        } else {
+            cout << "\nInvalid choice. Please enter a number.\n";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            pause_execution();
+            system("cls");
+        }
+
+        switch (choice){
+        case 1:
+            system("cls");
+            cout << "Enter your name : ";
+            getline(cin, name);
+            save_name(name);
+            cout << "Name Successfully Saved";
+            pause_execution();
+            break;
+        case 2:
+            return;
+            break;
+        default:
+            break;
+        }
+    }
+
+
+
+}

@@ -32,7 +32,7 @@
     - Run the resulting executable file.
 2. Enter name if new user
     -The program will ask you to enter your name if you are a new user.
-    ![alt text](images/New_user.png)
+![alt text](images/New_user.png)
 3. Main Menu
 
     - The program will display a menu with the following options:
@@ -42,18 +42,18 @@
         - Delete Task
         - Exit
     - Enter the number of your chosen option.
-    ![alt text](images/main_menu.png)
+![alt text](images/main_menu.png)
 4. Adding Tasks
 
     - Select the "Add Task" option.
     - Enter a description for the task.
     - The task will be added to the list.
-    ![alt text](images/add_task.png)
+![alt text](images/add_task.png)
 5. Viewing Tasks
 
     - Select the "View Tasks" option.
     - The program will display a list of all tasks, including their status (completed or not completed).
-    ![alt text](images/View_task.png)
+![alt text](images/View_task.png)
 6. Marking Tasks as Completed
 
     - Select the "Mark Task as Completed" option.

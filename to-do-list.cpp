@@ -279,7 +279,4 @@ void settings_menu(string& name){
             break;
         }
     }
-
-
-
 }

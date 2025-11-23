@@ -12,6 +12,7 @@
 - **Load tasks from a file:** Through the use of the fstream library, it reads the data in the file, and tranfers it to a vector where it is then manipuleted through out the program.
 - **User-friendly menu-based interface:** It provides a clean and user-friendly menu-based interface for navigation through the program
 - **Input handleing:** The program inludes input validation to handle out of rang or nun numerical input choices through out the program.
+- **User Name Functionallity:** The program allows the user to enter there name if they are a new user and saves it. it then displays there name every time they open the application
 * **
 ## TEACHNOLOGIES USED ⛏️
 * **Primary Language:** c++
@@ -29,7 +30,10 @@
 
     - Compile the program using a C++ compiler (e.g., g++).
     - Run the resulting executable file.
-2. Main Menu
+2. Enter name if new user
+    -The program will ask you to enter your name if you are a new user.
+    ![alt text](images/New_user.png)
+3. Main Menu
 
     - The program will display a menu with the following options:
         - Add Task
@@ -38,28 +42,36 @@
         - Delete Task
         - Exit
     - Enter the number of your chosen option.
-3. Adding Tasks
+    ![alt text](images/main_menu.png)
+4. Adding Tasks
 
     - Select the "Add Task" option.
     - Enter a description for the task.
     - The task will be added to the list.
-4. Viewing Tasks
+    ![alt text](images/add_task.png)
+5. Viewing Tasks
 
     - Select the "View Tasks" option.
     - The program will display a list of all tasks, including their status (completed or not completed).
-5. Marking Tasks as Completed
+    ![alt text](images/View_task.png)
+6. Marking Tasks as Completed
 
     - Select the "Mark Task as Completed" option.
     - The program will display a list of all tasks.
     - Enter the number of the task you want to mark as completed.
     - The task will be marked as completed.
-6. Deleting Tasks
+7. Deleting Tasks
 
     - Select the "Delete Task" option.
     - The program will display a list of all tasks.
     - Enter the number of the task you want to delete.
     - The task will be deleted.
-7. Exiting the Program
+8. Settings
+
+    - select change name
+        * Enter name
+![alt text](images/Setting.png)
+9. Exiting the Program
 
     - Select the "Exit" option.
     - The program will save the tasks to a file and exit.

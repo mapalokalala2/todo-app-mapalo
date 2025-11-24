@@ -78,9 +78,6 @@ int main(){
 }
 void pause_execution(){
     cout << "\n\nPress Enter to continue \n ";
-    if(cin.fail()){
-        cin.clear();
-    }
     cin.get();
 }
 
